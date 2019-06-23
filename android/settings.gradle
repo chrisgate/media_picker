@@ -1,0 +1,2 @@
+include ':mediapicker'
+rootProject.name = 'media_picker'
