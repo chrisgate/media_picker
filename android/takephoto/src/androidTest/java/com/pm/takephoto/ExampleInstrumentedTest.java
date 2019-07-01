@@ -1,6 +1,7 @@
-package com.pm.mediapicker;
+package com.pm.takephoto;
 
 import android.content.Context;
+
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +23,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.pm.mediapicker.test", appContext.getPackageName());
+        assertEquals("com.pm.takephoto.test", appContext.getPackageName());
     }
 }

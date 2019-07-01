@@ -35,4 +35,6 @@ android {
 
 dependencies {
     implementation project(path: ':mediapicker')
+    implementation project(path: ':takephoto')
+//    implementation project(path: ':mediapicker')
 }
