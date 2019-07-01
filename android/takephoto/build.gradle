@@ -1,3 +1,5 @@
+package android.takephoto
+
 apply plugin: 'com.android.library'
 
 android {

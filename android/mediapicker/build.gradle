@@ -1,3 +1,5 @@
+package android.mediapicker
+
 apply plugin: 'com.android.library'
 
 android {

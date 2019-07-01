@@ -1,4 +1,4 @@
-package com.pm.mediapicker;
+package android.mediapicker.src.androidTest.java.com.pm.mediapicker;
 
 import android.content.Context;
 

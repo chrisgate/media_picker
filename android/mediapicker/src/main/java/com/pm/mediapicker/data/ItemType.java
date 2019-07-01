@@ -1,4 +1,4 @@
-package com.pm.mediapicker.data;
+package android.mediapicker.src.main.java.com.pm.mediapicker.data;
 
 /**
  * 列表Item类型

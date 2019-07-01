@@ -1,4 +1,4 @@
-package com.pm.mediapicker.adapter;
+package android.mediapicker.src.main.java.com.pm.mediapicker.adapter;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -106,9 +106,9 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     /**
      * 接口回调，Item点击事件
      */
-    private AlbumAdapter.OnImageFolderChangeListener mImageFolderChangeListener;
+    private OnImageFolderChangeListener mImageFolderChangeListener;
 
-    public void setOnImageFolderChangeListener(AlbumAdapter.OnImageFolderChangeListener onItemClickListener) {
+    public void setOnImageFolderChangeListener(OnImageFolderChangeListener onItemClickListener) {
         this.mImageFolderChangeListener = onItemClickListener;
     }
 

@@ -1,4 +1,4 @@
-package com.pm.mediapicker.widget;
+package android.mediapicker.src.main.java.com.pm.mediapicker.widget;
 
 import android.animation.ValueAnimator;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.pm.takephoto;
+package android.takephoto.src.androidTest.java.com.pm.takephoto;
 
 import android.content.Context;
 

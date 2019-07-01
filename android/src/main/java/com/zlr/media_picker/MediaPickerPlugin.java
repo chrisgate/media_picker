@@ -1,4 +1,4 @@
-package zlr.com.mediapicker;
+package com.zlr.media_picker;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;

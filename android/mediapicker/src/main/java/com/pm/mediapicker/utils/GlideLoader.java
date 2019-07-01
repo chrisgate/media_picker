@@ -1,4 +1,4 @@
-package com.pm.mediapicker.utils;
+package android.mediapicker.src.main.java.com.pm.mediapicker.utils;
 
 import android.widget.ImageView;
 

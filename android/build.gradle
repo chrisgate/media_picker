@@ -1,4 +1,4 @@
-group 'zlr.com.mediapicker'
+group 'com.zlr.media_picker'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -34,7 +34,8 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':mediapicker')
-    implementation project(path: ':takephoto')
-//    implementation project(path: ':mediapicker')
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    api project(path: ':takephoto')
+    api project(path: ':mediapicker')
 }
+

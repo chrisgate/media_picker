@@ -1,5 +1,5 @@
 
-package com.pm.takephoto;
+package android.takephoto.src.main.java.com.pm.takephoto;
 
 import android.graphics.Rect;
 import android.view.View;

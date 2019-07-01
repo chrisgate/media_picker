@@ -1,4 +1,4 @@
-package zlr.com.media_picker_example;
+package com.zlr.media_picker_example;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

@@ -1,4 +1,4 @@
-package com.pm.mediapicker.loader;
+package android.mediapicker.src.main.java.com.pm.mediapicker.loader;
 
 import android.content.Context;
 

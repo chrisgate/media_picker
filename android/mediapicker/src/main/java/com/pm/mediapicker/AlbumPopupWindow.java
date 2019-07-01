@@ -1,4 +1,4 @@
-package com.pm.mediapicker;
+package android.mediapicker.src.main.java.com.pm.mediapicker;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
