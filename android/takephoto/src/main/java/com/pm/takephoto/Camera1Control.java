@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
  */
-package android.takephoto.src.main.java.com.pm.takephoto;
+package com.pm.takephoto;
 
 import android.Manifest;
 import android.content.Context;

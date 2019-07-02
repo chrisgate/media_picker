@@ -1,4 +1,4 @@
-package android.takephoto
+//package android.takephoto
 
 apply plugin: 'com.android.library'
 
@@ -21,6 +21,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        profile {
         }
     }
 

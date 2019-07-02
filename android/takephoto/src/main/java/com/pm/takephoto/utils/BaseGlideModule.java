@@ -1,4 +1,4 @@
-package android.takephoto.src.main.java.com.pm.takephoto.utils;
+package com.pm.takephoto.utils;
 
 import android.content.Context;
 import android.util.Log;

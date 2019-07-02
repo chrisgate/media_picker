@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package android.takephoto.src.main.java.com.pm.takephoto.utils;
+package com.pm.takephoto.utils;
 
 
 import android.app.Activity;

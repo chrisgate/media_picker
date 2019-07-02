@@ -1,5 +1,9 @@
 package com.zlr.media_picker;
 
+import android.app.Activity;
+
+import com.pm.mediapicker.MediaPicker;
+
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
