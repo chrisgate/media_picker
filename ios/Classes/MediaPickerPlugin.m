@@ -23,7 +23,7 @@
     if ([@"getPlatformVersion" isEqualToString:call.method]) {
         result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
         
-    } else if ([@"imagePicker" isEqualToString:call.method]) { //选择照片
+    } else if ([@"pickMedias" isEqualToString:call.method]) { //选择照片
         NSInteger maxSelectCount = 1;  //默认选择1张
         if ([_arguments objectForKey:@"maxSelectCount"]) {
             maxSelectCount = [[_arguments objectForKey:@"maxSelectCount"] integerValue];
@@ -52,11 +52,11 @@
             result(results);
         }];
         [actionSheet showPhotoLibrary];
-    } else if ([@"showCamera" isEqualToString:call.method]) { //打开照相机
+    } else if ([@"takePhoto" isEqualToString:call.method]) { //打开照相机
         //照相机剪裁类型（默认没有剪裁框）
         ZLCropType cropType = ZLCropTypeNone;
-        if ([_arguments objectForKey:@"cropType"]) {
-            cropType = [[_arguments objectForKey:@"cropType"] integerValue];
+        if ([_arguments objectForKey:@"cameraType"]) {
+            cropType = [[_arguments objectForKey:@"cameraType"] integerValue];
         }
         
         ZLCustomCamera *camera = [[ZLCustomCamera alloc] init];

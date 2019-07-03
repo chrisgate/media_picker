@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 enum CameraType {
   ///普通拍照
   general,
+
   /// 身份证正面(头像).
   IDCardFront,
 
@@ -19,13 +20,8 @@ enum CameraType {
   ///银行卡
   bankCard,
 }
-// 照相机剪裁枚举类型
-enum ZlrCameraCropType { none, idfront, idback, idhand, debitcard }
 
 class MediaPicker {
-//  static const MethodChannel _channel =
-//      MethodChannel('plugins.flutter.io/media_picker');
-
   static const MethodChannel _channel = const MethodChannel('media_picker');
 
   static Future<String> get platformVersion async {
@@ -60,27 +56,5 @@ class MediaPicker {
       },
     );
     return path.isNotEmpty ? new File(path) : null;
-  }
-
-  static Future<List<File>> imagePicker({int maxSelectCount = 1}) async {
-    final List<dynamic> paths = await _channel.invokeMethod(
-      "imagePicker",
-      <String, dynamic>{
-        'maxSelectCount': maxSelectCount,
-      },
-    );
-
-    var files = List<File>();
-    files = paths.map((path) => File(path)).toList();
-    return files;
-  }
-
-  static Future<File> showCamera(
-      {ZlrCameraCropType cropType = ZlrCameraCropType.none}) async {
-    final path = await _channel.invokeMethod("showCamera", <String, dynamic>{
-      'cropType': cropType.index,
-    });
-    File file = File(path);
-    return file;
   }
 }
