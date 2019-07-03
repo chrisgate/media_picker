@@ -1,7 +1,5 @@
 package com.zlr.mediapicker;
 
-import android.util.Log;
-
 import com.pm.mediapicker.MediaPicker;
 
 import io.flutter.plugin.common.MethodCall;
@@ -44,13 +42,14 @@ public class MediaPickerPlugin implements MethodChannel.MethodCallHandler {
             return;
         }
         if (methodCall.method.equals("pickMedias")) {
-            MediaPicker.getInstance().setMaxCount(9).setSingleType(true).showCamera(true);
+            int maxSelectCount = methodCall.argument("maxSelectCount");
+            MediaPicker.getInstance().setMaxCount(maxSelectCount).setSingleType(true).showCamera(true);
             mDelegate.onLaunchPickerActivity(methodCall, result, false);
         } else if (methodCall.method.equals("pickMedia")) {
             MediaPicker.getInstance().setMaxCount(1).setSingleType(true).showCamera(true);
             mDelegate.onLaunchPickerActivity(methodCall, result, true);
         } else if (methodCall.method.equals("takePhoto")) {
-            mDelegate.onLaunchTakePhotoActivity(methodCall,result);
+            mDelegate.onLaunchTakePhotoActivity(methodCall, result);
         }
     }
 }

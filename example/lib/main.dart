@@ -71,7 +71,7 @@ class _MyAppState extends State<MyApp> {
             buildImage(_takePicFile),
             RaisedButton(
               onPressed: () {
-                MediaPicker.pickMedias().then((files) {
+                MediaPicker.pickMedias(maxSelectCount: 9).then((files) {
                   setState(() {
                     _pickerFiles = files;
                   });

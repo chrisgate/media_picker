@@ -7,19 +7,20 @@ import 'package:flutter/services.dart';
 enum CameraType {
   ///普通拍照
   general,
-
-  ///手持身份证
-  handheld,
-
   /// 身份证正面(头像).
   IDCardFront,
 
   ///身份证背面(国徽)
   IDCardBack,
 
+  ///手持身份证
+  handheld,
+
   ///银行卡
   bankCard,
 }
+// 照相机剪裁枚举类型
+enum ZlrCameraCropType { none, idfront, idback, idhand, debitcard }
 
 class MediaPicker {
 //  static const MethodChannel _channel =
@@ -32,9 +33,12 @@ class MediaPicker {
     return version;
   }
 
-  static Future<List<File>> pickMedias() async {
+  static Future<List<File>> pickMedias({int maxSelectCount = 1}) async {
     final List<dynamic> paths = await _channel.invokeMethod<List<dynamic>>(
       "pickMedias",
+      <String, dynamic>{
+        'maxSelectCount': maxSelectCount,
+      },
     );
     return paths.isNotEmpty
         ? paths.map((path) => new File(path)).toList()
@@ -56,5 +60,27 @@ class MediaPicker {
       },
     );
     return path.isNotEmpty ? new File(path) : null;
+  }
+
+  static Future<List<File>> imagePicker({int maxSelectCount = 1}) async {
+    final List<dynamic> paths = await _channel.invokeMethod(
+      "imagePicker",
+      <String, dynamic>{
+        'maxSelectCount': maxSelectCount,
+      },
+    );
+
+    var files = List<File>();
+    files = paths.map((path) => File(path)).toList();
+    return files;
+  }
+
+  static Future<File> showCamera(
+      {ZlrCameraCropType cropType = ZlrCameraCropType.none}) async {
+    final path = await _channel.invokeMethod("showCamera", <String, dynamic>{
+      'cropType': cropType.index,
+    });
+    File file = File(path);
+    return file;
   }
 }

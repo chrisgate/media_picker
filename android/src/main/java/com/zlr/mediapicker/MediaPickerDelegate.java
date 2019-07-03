@@ -36,6 +36,12 @@ public class MediaPickerDelegate implements PluginRegistry.ActivityResultListene
     private static final int REQUEST_CODE_CHOOSE_MULTIPLE = 1002;
     private static final int REQUEST_CODE_TAKE_PHOTO = 1003;
 
+    private static final int GENERAL = 0;
+    private static final int ID_CARD_FRONT = 1;
+    private static final int ID_CARD_BACK = 2;
+    private static final int HANDHELD = 3;
+    private static final int BANK_CARD = 4;
+
 
     private Activity activity;
     private static final String[] REQUIRED_PERMISSIONS = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
@@ -121,19 +127,19 @@ public class MediaPickerDelegate implements PluginRegistry.ActivityResultListene
 //        Intent intent = new Intent(activity, LaunchActivity.class);
         int type = call.argument("cameraType");
         switch (type) {
-            case 0:
+            case GENERAL:
                 intent.putExtra(TakePhotoActivity.KEY_CONTENT_TYPE, TakePhotoActivity.CONTENT_TYPE_GENERAL);
                 break;
-            case 1:
-                intent.putExtra(TakePhotoActivity.KEY_CONTENT_TYPE, TakePhotoActivity.CONTENT_TYPE_HANDHELD);
-                break;
-            case 2:
+            case ID_CARD_FRONT:
                 intent.putExtra(TakePhotoActivity.KEY_CONTENT_TYPE, TakePhotoActivity.CONTENT_TYPE_ID_CARD_FRONT);
                 break;
-            case 3:
+            case ID_CARD_BACK:
                 intent.putExtra(TakePhotoActivity.KEY_CONTENT_TYPE, TakePhotoActivity.CONTENT_TYPE_ID_CARD_BACK);
                 break;
-            case 4:
+            case HANDHELD:
+                intent.putExtra(TakePhotoActivity.KEY_CONTENT_TYPE, TakePhotoActivity.CONTENT_TYPE_HANDHELD);
+                break;
+            case BANK_CARD:
                 intent.putExtra(TakePhotoActivity.KEY_CONTENT_TYPE, TakePhotoActivity.CONTENT_TYPE_BANK_CARD);
                 break;
             default:
