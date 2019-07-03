@@ -1,4 +1,4 @@
-package android.mediapicker.src.main.java.com.pm.mediapicker.utils;
+package com.pm.mediapicker.utils;
 
 import android.widget.ImageView;
 
@@ -10,7 +10,7 @@ import com.pm.mediapicker.R;
 public class GlideLoader implements ImageLoader {
 
     private RequestOptions mOptions = new RequestOptions()
-            .centerCrop()
+//            .centerCrop()
             .dontAnimate()
             .format(DecodeFormat.PREFER_RGB_565)
             .placeholder(R.mipmap.icon_image_default)

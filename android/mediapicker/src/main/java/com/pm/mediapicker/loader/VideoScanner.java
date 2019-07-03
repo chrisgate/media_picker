@@ -1,4 +1,4 @@
-package android.mediapicker.src.main.java.com.pm.mediapicker.loader;
+package com.pm.mediapicker.loader;
 
 import android.content.Context;
 import android.database.Cursor;

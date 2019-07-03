@@ -1,4 +1,4 @@
-package android.mediapicker.src.main.java.com.pm.mediapicker.manager;
+package com.pm.mediapicker.manager;
 
 
 import com.pm.mediapicker.data.MediaFile;

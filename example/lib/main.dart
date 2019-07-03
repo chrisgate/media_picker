@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:media_picker/media_picker.dart';
+import 'dart:io';
 
 void main() => runApp(MyApp());
 
@@ -13,6 +14,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
+  File _pickerFile;
+  File _takePicFile;
+  List<File> _pickerFiles;
 
   @override
   void initState() {
@@ -45,12 +49,61 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: Text('$_platformVersion'),
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+        body: ListView(
+          children: <Widget>[
+            buildRaisedButton(),
+            buildImage(_pickerFile),
+            RaisedButton(
+              onPressed: () {
+                MediaPicker.takePhoto(type: CameraType.IDCardFront)
+                    .then((file) {
+                  setState(() {
+                    _takePicFile = file;
+                  });
+                }).catchError((error) {
+                  debugPrint("error:$error");
+                });
+              },
+              child: Text("拍照"),
+            ),
+            buildImage(_takePicFile),
+            RaisedButton(
+              onPressed: () {
+                MediaPicker.pickMedias().then((files) {
+                  setState(() {
+                    _pickerFiles = files;
+                  });
+                }).catchError((error) {
+                  debugPrint("error:$error");
+                });
+              },
+              child: Text("多选图片或视频"),
+            ),
+          ],
         ),
       ),
     );
+  }
+
+  RaisedButton buildRaisedButton() => RaisedButton(
+        onPressed: () {
+          MediaPicker.pickMedia().then((file) {
+            setState(() {
+              _pickerFile = file;
+            });
+          }).catchError((error) {
+            debugPrint("error:$error");
+          });
+        },
+        child: Text("单选图片或视频"),
+      );
+
+  Widget buildImage(File file) {
+    return file != null
+        ? Image.file(file)
+        : Image.network(
+            "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4");
   }
 }

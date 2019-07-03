@@ -1,5 +1,6 @@
-package android.mediapicker.src.main.java.com.pm.mediapicker;
+package com.pm.mediapicker;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -43,7 +44,7 @@ public class ImagePreviewActivity extends AppCompatActivity implements View.OnCl
     private int mPosition = 0;
 
     private ImagePreViewAdapter mImagePreViewAdapter;
-
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,7 +1,8 @@
-package android.mediapicker.src.main.java.com.pm.mediapicker;
+package com.pm.mediapicker;
 
 
 import android.animation.ObjectAnimator;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaScannerConnection;
@@ -104,6 +105,7 @@ public class MediaPickerActivity extends AppCompatActivity implements View.OnCli
         }
     };
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

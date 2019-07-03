@@ -1,4 +1,4 @@
-package android.mediapicker.src.main.java.com.pm.mediapicker.utils;
+package com.pm.mediapicker.utils;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

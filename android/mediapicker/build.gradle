@@ -1,5 +1,3 @@
-//package android.mediapicker
-
 apply plugin: 'com.android.library'
 
 android {
@@ -21,8 +19,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        profile {
-        }
     }
 
     compileOptions {
@@ -43,8 +39,8 @@ dependencies {
     implementation 'androidx.loader:loader:1.0.0'
 
     //Glide
-    implementation 'com.github.bumptech.glide:glide:4.3.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'

@@ -81,7 +81,7 @@ public class TakePhotoActivity extends AppCompatActivity implements View.OnClick
             @Override
             public boolean onRequestPermission() {
                 ActivityCompat.requestPermissions(TakePhotoActivity.this,
-                        new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE},
+                        new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         PERMISSIONS_REQUEST_CAMERA);
                 return false;
             }

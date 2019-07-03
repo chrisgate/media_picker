@@ -1,4 +1,4 @@
-package android.takephoto.src.test.java.com.pm.takephoto;
+package com.pm.takephoto;
 
 import org.junit.Test;
 
