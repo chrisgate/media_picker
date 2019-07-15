@@ -63,9 +63,25 @@ public class MediaPickerDelegate implements PluginRegistry.ActivityResultListene
             handleChooseMediaResult(resultCode, intent);
         } else if (requestCode == REQUEST_CODE_CHOOSE_MULTIPLE) {
             handleChooseMediaResult(resultCode, intent);
+        } else if (requestCode == REQUEST_CODE_TAKE_PHOTO) {
+            handleTakePhotoResult(resultCode, intent);
         }
         return true;
     }
+
+    private void handleTakePhotoResult(int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK && data != null) {
+            String path = data.getStringExtra(TakePhotoActivity.KEY_RESULT_FILE_PATH);
+            if (path != null) {
+                mResult.success(path);
+            } else {
+                mResult.error("error", "error", null);
+            }
+        } else {
+            mResult.error("error", "error", null);
+        }
+    }
+
 
     private void handleChooseMediaResult(int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK && data != null) {
@@ -107,6 +123,7 @@ public class MediaPickerDelegate implements PluginRegistry.ActivityResultListene
     }
 
     public void onLaunchTakePhotoActivity(MethodCall call, MethodChannel.Result rawResult) {
+        mResult = rawResult;
         launchTakePhotoActivity(call);
     }
 

@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.zlr.supply.widget.AppBar
+    <com.pm.mediapicker.widget.AppBar
         android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,8 +71,6 @@
                 android:text="@string/image_select"
                 android:textColor="@android:color/white"
                 android:textSize="14sp" />
-
-
         </LinearLayout>
 
     </FrameLayout>

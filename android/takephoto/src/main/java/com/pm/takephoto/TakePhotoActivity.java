@@ -286,7 +286,7 @@ public class TakePhotoActivity extends AppCompatActivity implements View.OnClick
                 }
 
                 Intent intent = new Intent();
-                intent.putExtra(TakePhotoActivity.KEY_RESULT_FILE_PATH, outputFile);
+                intent.putExtra(TakePhotoActivity.KEY_RESULT_FILE_PATH, outputFile.getAbsolutePath());
                 setResult(Activity.RESULT_OK, intent);
                 finish();
             }
