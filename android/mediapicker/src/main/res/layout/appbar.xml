@@ -7,28 +7,28 @@
 
 
     <LinearLayout
-        android:id="@+id/navbar_left_container"
+        android:id="@+id/appbar_left_container"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
         android:gravity="center_vertical|start"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/navbar_title"
+        app:layout_constraintEnd_toStartOf="@+id/appbar_title"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/navbar_back_icon"
+            android:id="@+id/appbar_back_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="4dp"
             android:src="@drawable/ic_back" />
 
         <TextView
-            android:id="@+id/navbar_back_text"
+            android:id="@+id/appbar_back_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="返回"
@@ -36,7 +36,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/navbar_title"
+        android:id="@+id/appbar_title"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:gravity="center"
@@ -50,19 +50,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
-        android:id="@+id/navbar_right_container"
+        android:id="@+id/appbar_right_container"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginEnd="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/navbar_title"
+        app:layout_constraintStart_toEndOf="@+id/appbar_title"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
-            android:id="@+id/navbar_menu_text"
+            android:id="@+id/appbar_menu_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|end"
@@ -71,7 +71,7 @@
             android:visibility="visible" />
 
         <ImageView
-            android:id="@+id/navbar_menu_icon"
+            android:id="@+id/appbar_menu_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|end"

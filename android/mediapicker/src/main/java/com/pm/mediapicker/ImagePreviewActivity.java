@@ -70,7 +70,7 @@ public class ImagePreviewActivity extends AppCompatActivity implements View.OnCl
     }
 
     protected void initListener() {
-        mAppBar.getNavbarLeftContainer().setOnClickListener(v -> onBackPressed());
+        mAppBar.getAppbarLeftContainer().setOnClickListener(v -> onBackPressed());
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -79,7 +79,7 @@ public class ImagePreviewActivity extends AppCompatActivity implements View.OnCl
 
             @Override
             public void onPageSelected(int position) {
-                mAppBar.setNavbarTitle(String.format("%d/%d", position + 1, mMediaFileList.size()));
+                mAppBar.setAppbarTitle(String.format("%d/%d", position + 1, mMediaFileList.size()));
                 setIvPlayShow(mMediaFileList.get(position));
                 updateSelectButton(mMediaFileList.get(position).getPath());
             }
@@ -113,7 +113,7 @@ public class ImagePreviewActivity extends AppCompatActivity implements View.OnCl
             }
         });
 
-        mAppBar.getNavbarRightContainer().setOnClickListener(v -> {
+        mAppBar.getAppbarRightContainer().setOnClickListener(v -> {
             setResult(RESULT_OK, new Intent());
             finish();
         });
@@ -122,7 +122,7 @@ public class ImagePreviewActivity extends AppCompatActivity implements View.OnCl
     protected void initData() {
         mMediaFileList = DataUtil.getInstance().getMediaData();
         mPosition = getIntent().getIntExtra(IMAGE_POSITION, 0);
-        mAppBar.setNavbarTitle(String.format("%d/%d", mPosition + 1, mMediaFileList.size()));
+        mAppBar.setAppbarTitle(String.format("%d/%d", mPosition + 1, mMediaFileList.size()));
         mImagePreViewAdapter = new ImagePreViewAdapter(this, mMediaFileList);
         mViewPager.setAdapter(mImagePreViewAdapter);
         mViewPager.setCurrentItem(mPosition);
@@ -142,18 +142,18 @@ public class ImagePreviewActivity extends AppCompatActivity implements View.OnCl
         //改变确定按钮UI
         int selectCount = SelectionManager.getInstance().getSelectPaths().size();
         if (selectCount == 0) {
-            mAppBar.getNavbarRightContainer().setEnabled(false);
-            mAppBar.setNavbarMenuText(getString(R.string.confirm));
+            mAppBar.getAppbarRightContainer().setEnabled(false);
+            mAppBar.setAppbarMenuText(getString(R.string.confirm));
             return;
         }
         if (selectCount < maxCount) {
-            mAppBar.getNavbarRightContainer().setEnabled(true);
-            mAppBar.setNavbarMenuText(String.format(getString(R.string.confirm_msg), selectCount, maxCount));
+            mAppBar.getAppbarRightContainer().setEnabled(true);
+            mAppBar.setAppbarMenuText(String.format(getString(R.string.confirm_msg), selectCount, maxCount));
             return;
         }
         if (selectCount == maxCount) {
-            mAppBar.getNavbarRightContainer().setEnabled(true);
-            mAppBar.setNavbarMenuText(String.format(getString(R.string.confirm_msg), selectCount, maxCount));
+            mAppBar.getAppbarRightContainer().setEnabled(true);
+            mAppBar.setAppbarMenuText(String.format(getString(R.string.confirm_msg), selectCount, maxCount));
             return;
         }
     }

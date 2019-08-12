@@ -210,7 +210,7 @@ public class MediaPickerActivity extends AppCompatActivity implements View.OnCli
         //更新当前文件夹名
         String folderName = mediaFolder.getFolderName();
         if (!TextUtils.isEmpty(folderName)) {
-            mAppbar.setNavbarTitle(folderName);
+            mAppbar.setAppbarTitle(folderName);
             mTvPickerFolders.setText(folderName);
         }
         //更新图片列表数据源
@@ -295,12 +295,12 @@ public class MediaPickerActivity extends AppCompatActivity implements View.OnCli
 
         mTvPickerFolders.setText(mFolderName);
         //appbar
-        mAppbar.setNavbarTitle(mFolderName);
-        mAppbar.setNavbarMenuText("上传");
-        mAppbar.getNavbarLeftContainer().setOnClickListener(v -> onBackPressed());
-        mAppbar.getNavbarRightContainer().setOnClickListener(v -> commitSelection());
-//        mAppbar.getNavbarRightContainer().getChildAt(0).setPadding(10,10,10,10);
-//        mAppbar.getNavbarRightContainer().getChildAt(0).setBackgroundResource(R.drawable.folder_change_btn_shape);
+        mAppbar.setAppbarTitle(mFolderName);
+        mAppbar.setAppbarMenuText("上传");
+        mAppbar.getAppbarLeftContainer().setOnClickListener(v -> onBackPressed());
+        mAppbar.getAppbarRightContainer().setOnClickListener(v -> commitSelection());
+//        mAppbar.getAppbarRightContainer().getChildAt(0).setPadding(10,10,10,10);
+//        mAppbar.getAppbarRightContainer().getChildAt(0).setBackgroundResource(R.drawable.folder_change_btn_shape);
     }
 
     @Override
@@ -469,22 +469,22 @@ public class MediaPickerActivity extends AppCompatActivity implements View.OnCli
         //改变确定按钮UI
         int selectCount = SelectionManager.getInstance().getSelectPaths().size();
         if (selectCount == 0) {
-            mAppbar.getNavbarRightContainer().setEnabled(false);
-            mAppbar.setNavbarMenuText(getString(R.string.confirm));
+            mAppbar.getAppbarRightContainer().setEnabled(false);
+            mAppbar.setAppbarMenuText(getString(R.string.confirm));
             mBtnPreview.setEnabled(false);
             mBtnPreview.setText(getString(R.string.preview));
             return;
         }
         if (selectCount < mMaxCount) {
-            mAppbar.getNavbarRightContainer().setEnabled(true);
-            mAppbar.setNavbarMenuText(String.format(getString(R.string.confirm_msg), selectCount, mMaxCount));
+            mAppbar.getAppbarRightContainer().setEnabled(true);
+            mAppbar.setAppbarMenuText(String.format(getString(R.string.confirm_msg), selectCount, mMaxCount));
             mBtnPreview.setEnabled(true);
             mBtnPreview.setText(String.format(getString(R.string.preview_msg), selectCount));
             return;
         }
         if (selectCount == mMaxCount) {
-            mAppbar.getNavbarRightContainer().setEnabled(true);
-            mAppbar.setNavbarMenuText(String.format(getString(R.string.confirm_msg), selectCount, mMaxCount));
+            mAppbar.getAppbarRightContainer().setEnabled(true);
+            mAppbar.setAppbarMenuText(String.format(getString(R.string.confirm_msg), selectCount, mMaxCount));
             mBtnPreview.setEnabled(true);
             mBtnPreview.setText(String.format(getString(R.string.preview_msg), selectCount));
             return;

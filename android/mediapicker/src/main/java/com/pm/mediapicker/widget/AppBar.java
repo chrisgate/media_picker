@@ -19,20 +19,19 @@ import androidx.constraintlayout.widget.ConstraintLayout;
  * @author pm
  * @date 2019/6/17
  * @email puming@zdsoft.cn
- *
  */
 public class AppBar extends ConstraintLayout {
     public static final int DEFAULT_LEFT_ICON = R.mipmap.button_back;
     public static final int DEFAULT_RIGHT_ICON = R.mipmap.button_logout;
     public static final String DEFAULT_LEFT_TEXT = "返回";
 
-    private ImageView mNavbarBackIcon;
-    private TextView mNavbarBackText;
-    private LinearLayout mNavbarLeftContainer;
-    private TextView mNavbarTitle;
-    private TextView mNavbarMenuText;
-    private ImageView mNavbarMenuIcon;
-    private FrameLayout mNavbarRightContainer;
+    private ImageView mAppbarBackIcon;
+    private TextView mAppbarBackText;
+    private LinearLayout mAppbarLeftContainer;
+    private TextView mAppbarTitle;
+    private TextView mAppbarMenuText;
+    private ImageView mAppbarMenuIcon;
+    private FrameLayout mAppbarRightContainer;
 
     public AppBar(Context context) {
         this(context, null);
@@ -45,103 +44,101 @@ public class AppBar extends ConstraintLayout {
     public AppBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         View view = LayoutInflater.from(context).inflate(R.layout.appbar, this, true);
-        mNavbarBackIcon = (ImageView) view.findViewById(R.id.navbar_back_icon);
-        mNavbarBackText = (TextView) view.findViewById(R.id.navbar_back_text);
-        mNavbarLeftContainer = (LinearLayout) view.findViewById(R.id.navbar_left_container);
-        mNavbarTitle = (TextView) view.findViewById(R.id.navbar_title);
-        mNavbarMenuText = (TextView) view.findViewById(R.id.navbar_menu_text);
-        mNavbarMenuIcon = (ImageView) view.findViewById(R.id.navbar_menu_icon);
-        mNavbarRightContainer = (FrameLayout) view.findViewById(R.id.navbar_right_container);
+        mAppbarBackIcon = (ImageView) view.findViewById(R.id.appbar_back_icon);
+        mAppbarBackText = (TextView) view.findViewById(R.id.appbar_back_text);
+        mAppbarLeftContainer = (LinearLayout) view.findViewById(R.id.appbar_left_container);
+        mAppbarTitle = (TextView) view.findViewById(R.id.appbar_title);
+        mAppbarMenuText = (TextView) view.findViewById(R.id.appbar_menu_text);
+        mAppbarMenuIcon = (ImageView) view.findViewById(R.id.appbar_menu_icon);
+        mAppbarRightContainer = (FrameLayout) view.findViewById(R.id.appbar_right_container);
     }
 
-    public ViewGroup getNavbarLeftContainer() {
-        return mNavbarLeftContainer;
+    public ViewGroup getAppbarLeftContainer() {
+        return mAppbarLeftContainer;
     }
 
-    public ViewGroup getNavbarRightContainer() {
-        return mNavbarRightContainer;
+    public ViewGroup getAppbarRightContainer() {
+        return mAppbarRightContainer;
     }
 
-    public AppBar setNavbarBackIcon(int resId) {
-        mNavbarBackIcon.setImageResource(resId);
+    public AppBar setAppbarBackIcon(int resId) {
+        mAppbarBackIcon.setImageResource(resId);
         return this;
     }
 
-    public AppBar setNavbarBackText(CharSequence text) {
-        mNavbarBackText.setText(text);
+    public AppBar setAppbarBackText(CharSequence text) {
+        mAppbarBackText.setText(text);
         return this;
     }
 
-    public AppBar setNavbarTitle(CharSequence text) {
-        mNavbarTitle.setText(text);
+    public AppBar setAppbarTitle(CharSequence text) {
+        mAppbarTitle.setText(text);
         return this;
     }
 
-    public AppBar setNavbarMenuText(CharSequence text) {
-        mNavbarMenuText.setText(text);
+    public AppBar setAppbarMenuText(CharSequence text) {
+        mAppbarMenuText.setText(text);
         return this;
     }
 
-    public AppBar setNavbarMenuIcon(int resId) {
-        mNavbarMenuIcon.setBackgroundResource(resId);
+    public AppBar setAppbarMenuIcon(int resId) {
+        mAppbarMenuIcon.setBackgroundResource(resId);
         return this;
     }
 
-    public AppBar showNavbarMenuIcon(boolean show) {
+    public AppBar showAppbarMenuIcon(boolean show) {
         if (show) {
-            mNavbarMenuIcon.setVisibility(VISIBLE);
-            mNavbarMenuText.setVisibility(GONE);
+            mAppbarMenuIcon.setVisibility(VISIBLE);
+            mAppbarMenuText.setVisibility(GONE);
         } else {
-            mNavbarMenuIcon.setVisibility(GONE);
-            mNavbarMenuText.setVisibility(VISIBLE);
+            mAppbarMenuIcon.setVisibility(GONE);
+            mAppbarMenuText.setVisibility(VISIBLE);
         }
         return this;
     }
 
-    public AppBar showNavbarTitle(boolean show) {
+    public AppBar showAppbarTitle(boolean show) {
         if (show) {
-            mNavbarTitle.setVisibility(VISIBLE);
+            mAppbarTitle.setVisibility(VISIBLE);
         } else {
-            mNavbarTitle.setVisibility(GONE);
+            mAppbarTitle.setVisibility(GONE);
         }
         return this;
     }
 
-    public AppBar showNavbarBackIcon(boolean show) {
+    public AppBar showAppbarBackIcon(boolean show) {
         if (show) {
-            mNavbarBackIcon.setVisibility(VISIBLE);
+            mAppbarBackIcon.setVisibility(VISIBLE);
         } else {
-            mNavbarBackIcon.setVisibility(GONE);
+            mAppbarBackIcon.setVisibility(GONE);
         }
         return this;
     }
 
-    public AppBar showNavbarBackText(boolean show) {
+    public AppBar showAppbarBackText(boolean show) {
         if (show) {
-            mNavbarBackText.setVisibility(VISIBLE);
+            mAppbarBackText.setVisibility(VISIBLE);
         } else {
-            mNavbarBackText.setVisibility(GONE);
+            mAppbarBackText.setVisibility(GONE);
         }
         return this;
     }
 
-    public AppBar showNavbarRightContainer(boolean show) {
+    public AppBar showAppbarRightContainer(boolean show) {
         if (show) {
-            mNavbarRightContainer.setVisibility(VISIBLE);
+            mAppbarRightContainer.setVisibility(VISIBLE);
         } else {
-            mNavbarRightContainer.setVisibility(GONE);
+            mAppbarRightContainer.setVisibility(GONE);
         }
         return this;
     }
 
-    public AppBar showNavbarLeftContainer(boolean show) {
+    public AppBar showAppbarLeftContainer(boolean show) {
         if (show) {
-            mNavbarLeftContainer.setVisibility(VISIBLE);
+            mAppbarLeftContainer.setVisibility(VISIBLE);
         } else {
-            mNavbarLeftContainer.setVisibility(GONE);
+            mAppbarLeftContainer.setVisibility(GONE);
         }
         return this;
     }
-
-
 }
